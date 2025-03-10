@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
 });
 
-<script>
     document.addEventListener("DOMContentLoaded", function() {
         const audio = document.getElementById("background-audio");
 
@@ -18,4 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-</script>
