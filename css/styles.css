@@ -1,14 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset e Estilos Gerais */
+* {
     margin: 0;
     padding: 0;
-    background-color: #1D272F;
-    color: #E1E1E1;
-    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background-color: #000000;
+    color: #E1E1E1;
+    text-align: center;
+    line-height: 1.6;
+    background-image: url('../img/programacao.jpg'); /* Substitua com o caminho da sua imagem animada */
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 20s infinite linear;
+    position: relative;
+}
+
+/* Camada de sobreposição */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Cor preta com 90% de opacidade */
+    z-index: -1; /* Certifique-se de que a sobreposição esteja atrás do conteúdo */
+}
+
+
+/* Animação para mover o background */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Header */
 header {
-    background-color: #1E2830;
+    background-color: rgba(30, 40, 48, 0.7); /* Fundo transparente */
     padding: 20px;
 }
 
@@ -16,6 +51,7 @@ header {
     max-width: 150px;
 }
 
+/* Título Principal */
 .animated-title {
     font-size: 2em;
     color: #5CA9E6;
@@ -27,23 +63,46 @@ header {
     color: #C0C0C0;
 }
 
+/* Menu de Navegação */
+nav {
+    position: relative;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
+nav ul li a:hover {
+    color: #CFAF45;
+}
+
+/* Banner */
 .banner {
-    background-color: #5CA9E6;
+    background-color: rgba(92, 169, 230, 0.8); /* Fundo transparente */
     color: #1D272F;
     padding: 50px 20px;
 }
@@ -55,12 +114,21 @@ nav ul li a {
     color: #1D272F;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
+.banner button:hover {
+    background-color: #E1E1E1;
+}
+
+/* Seções */
 section {
     margin: 40px 0;
+    padding: 20px;
 }
 
+/* Botão WhatsApp */
 .whatsapp-button {
     display: inline-block;
     padding: 10px 20px;
@@ -69,15 +137,82 @@ section {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
+.whatsapp-button:hover {
+    background-color: #1EBE5D;
+}
+
+/* Footer */
 footer {
     background-color: #1C262E;
     padding: 20px;
     color: #C0C0C0;
+    text-align: center;
 }
 
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Links no Footer */
+footer a {
+    color: #5CA9E6; /* Azul claro para os links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Torna o texto mais forte */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves para a cor e o efeito de hover */
+}
+
+footer a:hover {
+    color: #CFAF45; /* Cor dourada ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do link levemente ao passar o mouse */
+}
+
+footer a:active {
+    color: #1D272F; /* Cor escura quando o link é clicado */
+}
+
+/* Separador entre os links */
+footer p a + a {
+    margin-left: 10px; /* Espaçamento entre os links */
+}
+
+
+/* Animação FadeIn */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #1E2830;
+        width: 200px;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
