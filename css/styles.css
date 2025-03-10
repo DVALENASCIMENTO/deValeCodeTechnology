@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1D272F;
+    color: #E1E1E1;
+    text-align: center;
+}
+
+header {
+    background-color: #1E2830;
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.animated-title {
+    font-size: 2em;
+    color: #5CA9E6;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #C0C0C0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.banner {
+    background-color: #5CA9E6;
+    color: #1D272F;
+    padding: 50px 20px;
+}
+
+.banner button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #CFAF45;
+    color: #1D272F;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    margin: 40px 0;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #1C262E;
+    padding: 20px;
+    color: #C0C0C0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
